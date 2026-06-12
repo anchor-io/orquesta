@@ -1,0 +1,89 @@
+# Dependencies
+node_modules/
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnpm-store/
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+pnpm-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage
+coverage/
+.nyc_output/
+*.lcov
+
+# Build outputs
+dist/
+build/
+.out/
+.output/
+.next/
+.nuxt/
+.svelte-kit/
+.vercel/
+.netlify/
+.wrangler/
+
+# Vite / bundler timestamps
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+
+# Keep example/test env files tracked
+!.env.example
+!.env.test
+
+# Testing
+test-results/
+playwright-report/
+playwright/.cache/
+*.snap.md
+
+# Turbo / monorepo caches
+.turbo/
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDEs (root only where not explicitly tracked)
+/.vscode/
+/.idea/
+*.code-workspace
+
+# Debug
+.eslintcache
+.prettiercache
+.stylelintcache
+
+# Misc
+*.log
+.cache/
+temp/
+tmp/
