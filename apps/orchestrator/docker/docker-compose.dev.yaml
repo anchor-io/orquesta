@@ -1,0 +1,51 @@
+name: anchor-orchestrator-dev
+services:
+  postgres:
+    image: postgres:18.2
+    container_name: anchor-orchestrator-dev-postgres
+    restart: unless-stopped
+    networks:
+      - anchor-orchestrator-dev-network
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: local
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    ports:
+      - '5432:5432'
+
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.60.0-noble
+    container_name: anchor-orchestrator-dev-playwright
+    restart: unless-stopped
+    ipc: host
+    networks:
+      - anchor-orchestrator-dev-network
+    ports:
+      - '3200:3200'
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    command: npx playwright run-server --port 3200 --host 0.0.0.0
+
+  drizzle-gateway:
+    image: ghcr.io/drizzle-team/gateway:1.2.0
+    container_name: anchor-orchestrator-dev-drizzle-gateway
+    restart: always
+    ports:
+      - '4983:4983'
+    networks:
+      - anchor-orchestrator-dev-network
+    environment:
+      PORT: 4983
+      STORE_PATH: /app
+      MASTERPASS: postgres
+    volumes:
+      - drizzle_gateway:/app
+
+networks:
+  anchor-orchestrator-dev-network:
+
+volumes:
+  drizzle_gateway:
+  postgres_data:
