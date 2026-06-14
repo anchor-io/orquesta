@@ -1,0 +1,19 @@
+name: anchor-orchestrator-dev
+
+services:
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.60.0-noble
+    container_name: anchor-orchestrator-playwright
+    restart: unless-stopped
+    ipc: host
+    ports:
+      - '3201:3200'
+    extra_hosts:
+      - 'host.docker.internal:host-gateway'
+    labels:
+      - 'com.docker.compose.project=anchor-orchestrator-dev'
+      - 'com.docker.compose.service=playwright'
+      - 'anchorsoft.project=orchestrator'
+      - 'anchorsoft.service=playwright-test-runner'
+      - 'anchorsoft.environment=dev'
+    command: npx playwright run-server --port 3200 --host 0.0.0.0

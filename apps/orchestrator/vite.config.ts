@@ -5,6 +5,8 @@ import { playwright } from '@vitest/browser-playwright';
 import adapter from '@sveltejs/adapter-node';
 import { sveltekit } from '@sveltejs/kit/vite';
 
+const playwrightWsEndpoint = 'ws://localhost:3201/';
+
 export default defineConfig({
 	plugins: [
 		tailwindcss(),
@@ -35,7 +37,12 @@ export default defineConfig({
 					name: 'client',
 					browser: {
 						enabled: true,
-						provider: playwright(),
+						provider: playwright({
+							connectOptions: {
+								wsEndpoint: playwrightWsEndpoint,
+								exposeNetwork: '<loopback>'
+							}
+						}),
 						instances: [{ browser: 'chromium', headless: true }]
 					},
 					include: ['src/**/*.svelte.{test,spec}.{js,ts}'],
