@@ -46,11 +46,8 @@ vite.config.ts.timestamp-*
 
 # Environment files
 .env
-.env.local
-.env.*.local
-.env.development
-.env.test
-.env.production
+.env.*
+
 
 # Keep example/test env files tracked
 !.env.example
@@ -87,3 +84,4 @@ Thumbs.db
 .cache/
 temp/
 tmp/
+research/
