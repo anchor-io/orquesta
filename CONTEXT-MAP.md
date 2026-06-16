@@ -7,6 +7,8 @@ This is a multi-context monorepo. Each package and app owns its own domain conte
 | Context | Path | Description |
 | ------- | ---- | ----------- |
 | Root | `CONTEXT-MAP.md` (this file) | System-wide context and pointers to per-context docs. |
+| Orquesta | [`apps/orquesta/CONTEXT.md`](./apps/orquesta/CONTEXT.md) | The SvelteKit web application for anchor-orchestrator. |
+| Orquesta Core | [`packages/orquesta-core/CONTEXT.md`](./packages/orquesta-core/CONTEXT.md) | Shared orchestration-domain TypeScript for Orquesta apps. |
 
 ## Per-context docs
 
