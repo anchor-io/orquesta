@@ -1,7 +1,7 @@
 import { modify, applyEdits } from "jsonc-parser";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { Err, Ok, type Result } from "../result.ts";
+import { Err, Ok, type Result } from "@anchorsoft/orquesta-shared";
 import { ConfigError, toConfigError } from "./errors.ts";
 import type { ConfigInput } from "./schema.ts";
 

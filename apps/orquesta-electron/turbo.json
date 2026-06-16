@@ -1,0 +1,17 @@
+{
+  "extends": ["//"],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["out/**"]
+    },
+    "copy:server": {
+      "dependsOn": ["@anchorsoft/orquesta#build"],
+      "outputs": ["build/**"]
+    },
+    "package": {
+      "dependsOn": ["build", "copy:server", "format:check", "check", "lint"],
+      "outputs": ["dist/**"]
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import * as v from "valibot";
-import { Err, Ok, type Result } from "../result.ts";
+import { Err, Ok, type Result } from "@anchorsoft/orquesta-shared";
 import { ConfigError, ConfigValidationError, toConfigError } from "./errors.ts";
 import { mergeDeep } from "./merge.ts";
 import { parseConfig } from "./parse.ts";

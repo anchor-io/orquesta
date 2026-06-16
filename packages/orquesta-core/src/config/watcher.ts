@@ -1,7 +1,7 @@
 import watcher from "@parcel/watcher";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { Err, Ok, type Result } from "../result.ts";
+import { Err, Ok, type Result } from "@anchorsoft/orquesta-shared";
 import { ConfigError, toConfigError } from "./errors.ts";
 import { globalConfigDir, type Env } from "./paths.ts";
 

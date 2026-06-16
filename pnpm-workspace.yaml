@@ -1,6 +1,7 @@
 packages:
   - "apps/*"
   - "packages/*"
+shellEmulator: true
 allowBuilds:
   "@tailwindcss/oxide": true
   electron: true

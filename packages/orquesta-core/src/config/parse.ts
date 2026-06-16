@@ -1,5 +1,5 @@
 import { parse as parseJsonc, type ParseError } from "jsonc-parser";
-import { Err, Ok, type Result } from "../result.ts";
+import { Err, Ok, type Result } from "@anchorsoft/orquesta-shared";
 import { ConfigParseError } from "./errors.ts";
 
 /** Parses JSONC text into a plain JavaScript value. */
