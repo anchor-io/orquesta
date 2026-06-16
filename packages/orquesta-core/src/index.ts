@@ -1,8 +1,14 @@
-export * from "./config/errors.ts";
-export * from "./config/index.ts";
-export * from "./config/loader.ts";
-export * from "./config/merge.ts";
-export * from "./config/paths.ts";
-export * from "./config/schema.ts";
-export * from "./config/writer.ts";
-export * from "./result.ts";
+export {
+  ConfigError,
+  ConfigManager,
+  ConfigParseError,
+  ConfigValidationError,
+  DEFAULT_LOCALE,
+  SUPPORTED_LOCALES,
+  type Config,
+  type ConfigErrorCode,
+  type ConfigInput,
+  type ConfigManagerOptions,
+  type Env,
+  type LoadedDocument,
+} from "./config/index.ts";

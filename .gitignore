@@ -85,3 +85,4 @@ Thumbs.db
 temp/
 tmp/
 research/
+*:Zone.Identifier

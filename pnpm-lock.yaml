@@ -143,6 +143,9 @@ importers:
 
   packages/orquesta-core:
     dependencies:
+      '@anchorsoft/orquesta-shared':
+        specifier: workspace:*
+        version: link:../orquesta-shared
       '@parcel/watcher':
         specifier: ^2.5.6
         version: 2.5.6
@@ -152,6 +155,27 @@ importers:
       valibot:
         specifier: ^1.4.1
         version: 1.4.1(typescript@6.0.3)
+    devDependencies:
+      '@types/node':
+        specifier: ^24
+        version: 24.13.2
+      '@typescript/native-preview':
+        specifier: 7.0.0-dev.20260421.2
+        version: 7.0.0-dev.20260421.2
+      oxfmt:
+        specifier: ^0.54.0
+        version: 0.54.0(svelte@5.56.3(@typescript-eslint/types@8.61.0))
+      oxlint:
+        specifier: ^1.69.0
+        version: 1.69.0(oxlint-tsgolint@0.23.0)
+      oxlint-tsgolint:
+        specifier: ^0.23.0
+        version: 0.23.0
+      vitest:
+        specifier: ^4.1.8
+        version: 4.1.8(@types/node@24.13.2)(@vitest/browser-playwright@4.1.8)(vite@8.0.16(@types/node@24.13.2)(esbuild@0.28.0)(jiti@2.7.0)(tsx@4.22.4))
+
+  packages/orquesta-shared:
     devDependencies:
       '@types/node':
         specifier: ^24
